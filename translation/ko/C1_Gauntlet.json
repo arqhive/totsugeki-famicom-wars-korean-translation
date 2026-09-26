@@ -1,0 +1,337 @@
+{
+ "file": "C1_GauntletJapanese.str",
+ "scene": "C1_Gauntlet",
+ "entries": [
+  {
+   "index": 0,
+   "speaker": "Betty",
+   "ko": "적의 전방 기지로 가서\n동료들을 구해 줘!"
+  },
+  {
+   "index": 1,
+   "speaker": "Betty",
+   "ko": "적 전차는 바주카병으로 상대해!"
+  },
+  {
+   "index": 2,
+   "speaker": "Betty",
+   "ko": "전차를 록온하고 C 스틱으로\n바주카병을 선택한 뒤 Y 버튼을\n누르면 공격하러 갈 거야!"
+  },
+  {
+   "index": 3,
+   "speaker": "Nova",
+   "ko": "♪♪"
+  },
+  {
+   "index": 4,
+   "speaker": "Betty",
+   "ko": "동료들을 구하려면 울타리를 부숴!"
+  },
+  {
+   "index": 5,
+   "ko": "공백"
+  },
+  {
+   "index": 6,
+   "speaker": "Nova",
+   "ko": "놈들을 당장 막아라!"
+  },
+  {
+   "index": 7,
+   "speaker": "Nova",
+   "ko": "젠장! 놈들을 막을 방법이 없나!?"
+  },
+  {
+   "index": 8,
+   "speaker": "Betty",
+   "ko": "적 바주카병을 조심해!\n큰 피해를 입을 수 있어."
+  },
+  {
+   "index": 9,
+   "speaker": "Betty",
+   "ko": "허술한 검문소네!\n그대로 돌파해!"
+  },
+  {
+   "index": 10,
+   "speaker": "Betty",
+   "ko": "오른쪽? 왼쪽?\n아, 모르겠어!"
+  },
+  {
+   "index": 11,
+   "speaker": "Betty",
+   "ko": "급커브야! 오른쪽! 오른쪽!\n조심해! 떨어지지 마."
+  },
+  {
+   "index": 12,
+   "speaker": "Betty",
+   "ko": "다리가…\n액셀을 끝까지 밟아!"
+  },
+  {
+   "index": 13,
+   "speaker": "Betty",
+   "ko": "솜씨 좋은데!\n너 공군 출신이었나?"
+  },
+  {
+   "index": 14,
+   "ko": "공백"
+  },
+  {
+   "index": 15,
+   "ko": "공백"
+  },
+  {
+   "index": 16,
+   "speaker": "Betty",
+   "ko": "일단 쭉 직진해!"
+  },
+  {
+   "index": 17,
+   "speaker": "Betty",
+   "ko": "실버 스타를 향해 가!\n길 잃지 말고."
+  },
+  {
+   "index": 18,
+   "speaker": "Betty",
+   "ko": "♪♪강이야아아!\n저어어엄프!"
+  },
+  {
+   "index": 19,
+   "ko": "공백"
+  },
+  {
+   "index": 20,
+   "speaker": "Nova",
+   "ko": "운전 솜씨가 훌륭하군요, 베티 준장!\n하지만 툰드라군의 공격 헬기까지\n따돌릴 수는 없을 겁니다!"
+  },
+  {
+   "index": 21,
+   "speaker": "Betty",
+   "ko": "큰일이야!\n상공에 공격 헬기야!"
+  },
+  {
+   "index": 22,
+   "ko": "공백"
+  },
+  {
+   "index": 23,
+   "speaker": "Betty",
+   "ko": "♪♪이 숲을 가로질러!\n자, 액셀을 끝까지 밟아!"
+  },
+  {
+   "index": 24,
+   "speaker": "Betty",
+   "ko": "제법 잘하잖아!\n곧 숲을 벗어날 거야."
+  },
+  {
+   "index": 25,
+   "speaker": "Betty",
+   "ko": "또 툰드라군 바리케이드야!\n다른 길은 없을까?"
+  },
+  {
+   "index": 26,
+   "speaker": "Betty",
+   "ko": "해냈어!\n야영지에 도착했어!"
+  },
+  {
+   "index": 27,
+   "speaker": "Betty",
+   "ko": "암호는 무사해!\n툰드라군의 반격에 대비해!"
+  },
+  {
+   "index": 28,
+   "ko": "공백"
+  },
+  {
+   "index": 29,
+   "ko": "공백"
+  },
+  {
+   "index": 30,
+   "speaker": "Nova",
+   "ko": "박살 내라! 우리 툰드라군의 영역에서\n날뛰면 어떻게 되는지 보여 줘라!"
+  },
+  {
+   "index": 31,
+   "speaker": "Betty",
+   "ko": "자, 미사일병이 나설 차례야!\n공격 헬기를 격추해!"
+  },
+  {
+   "index": 32,
+   "speaker": "Betty",
+   "ko": "정찰차를 골드 스타가 있는 곳에\n세워 둬!"
+  },
+  {
+   "index": 33,
+   "speaker": "Betty",
+   "ko": "다음은 경전차를 추천할게!"
+  },
+  {
+   "index": 34,
+   "speaker": "Betty",
+   "ko": "귀중한 전차야!\n파괴되지 않도록 조심해."
+  },
+  {
+   "index": 35,
+   "ko": "공백"
+  },
+  {
+   "index": 36,
+   "speaker": "Betty",
+   "ko": "앞으로 4분이야!"
+  },
+  {
+   "index": 37,
+   "speaker": "Betty",
+   "ko": "2분 남았어! 서둘러!"
+  },
+  {
+   "index": 38,
+   "speaker": "Betty",
+   "ko": "앞으로 1분!"
+  },
+  {
+   "index": 39,
+   "speaker": "Betty",
+   "ko": "이제 30초밖에 안 남았어!"
+  },
+  {
+   "index": 40,
+   "speaker": "Betty",
+   "ko": "안타깝지만 시간이 다 됐어."
+  },
+  {
+   "index": 41,
+   "speaker": "Betty",
+   "ko": "적에게 빼앗긴 정찰차에는 중요한 암호가\n숨겨져 있어. 6분 안에 우리\n야영지까지 몰고 와 줘!"
+  },
+  {
+   "index": 42,
+   "speaker": "Nova",
+   "ko": "준장! 당신 부하들은\n이 총공격을 버텨 내지\n못할 겁니다!"
+  },
+  {
+   "index": 43,
+   "speaker": "Betty",
+   "ko": "방금 그 무전은\n신경 쓰지 않아도 돼!"
+  },
+  {
+   "index": 44,
+   "speaker": "Betty",
+   "ko": "정말 잘했어!\n미션 완료야!"
+  },
+  {
+   "index": 45,
+   "speaker": "Nova",
+   "ko": "과연, 아무래도 당신은\n싸워 볼 만한 상대인 것 같군요, 베티 준장!\n다시 만날 날을 기대하겠습니다!"
+  },
+  {
+   "index": 46,
+   "speaker": "Betty",
+   "ko": "저도 기대하고 있을게요."
+  },
+  {
+   "index": 47,
+   "ko": "공백"
+  },
+  {
+   "index": 48,
+   "speaker": "Betty",
+   "ko": "동료들을 구하지 못했어.\n미션 실패야."
+  },
+  {
+   "index": 49,
+   "speaker": "Betty",
+   "ko": "정찰차가 부서졌잖아!\n작전을 완전히 망쳤어!"
+  },
+  {
+   "index": 50,
+   "speaker": "Betty",
+   "ko": "야영지를 지키지 못했잖아!\n네 탓이야!"
+  },
+  {
+   "index": 51,
+   "speaker": "Nova",
+   "ko": "툰드라군의 승리다!\n보너스를 기대해도 좋다!"
+  },
+  {
+   "index": 52,
+   "speaker": "Betty",
+   "ko": "동료들을 구했구나!\n자, 거기 있는 정찰차에 올라타!"
+  },
+  {
+   "index": 53,
+   "speaker": "Betty",
+   "ko": "일단 달려!\n골드 스타를 향해!"
+  },
+  {
+   "index": 54,
+   "speaker": "Nova",
+   "ko": "탈출한 포로들을 잡아라!\n적에게 정보를 넘겨줄 수는 없다!"
+  },
+  {
+   "index": 55,
+   "speaker": "Betty",
+   "ko": "길을 따라가!\n"
+  },
+  {
+   "index": 56,
+   "speaker": "Betty",
+   "ko": "남은 부대는 신경 쓰지 마!\n그들끼리 어떻게든 해낼 테니까!"
+  },
+  {
+   "index": 57,
+   "speaker": "Betty",
+   "ko": "다시 만나니 반가워!\n이번 임무는 속도가 중요해."
+  },
+  {
+   "index": 58,
+   "speaker": "Betty",
+   "ko": "윈드브레이크산 작전 때\n툰드라군이 우리 동료 두 명을 붙잡았어.\n이 기지에 갇혀 있지."
+  },
+  {
+   "index": 59,
+   "speaker": "Betty",
+   "ko": "여기서 네 임무는 동료들을 구하고\n정찰차를 몰아서 북쪽 야영지에\n합류하는 거야."
+  },
+  {
+   "index": 60,
+   "speaker": "Nova",
+   "ko": "바주카병! 공격 개시!"
+  },
+  {
+   "index": 61,
+   "ko": "프런티어군 정찰차를 탈환하라"
+  },
+  {
+   "index": 62,
+   "ko": "야영지까지 탈출하라"
+  },
+  {
+   "index": 63,
+   "ko": "야영지를 방어하라"
+  },
+  {
+   "index": 64,
+   "ko": "숲을 돌파하라"
+  },
+  {
+   "index": 65,
+   "ko": "툰드라군 기지에서 탈출하라"
+  },
+  {
+   "index": 66,
+   "speaker": "Betty",
+   "ko": "조언 하나 해 줄게!\n파란 통은 수리 팩이야!\n차량의 피해를 복구해 줘."
+  },
+  {
+   "index": 67,
+   "speaker": "Betty",
+   "ko": "전차로 바주카병을 상대하면 안 돼.\n먼저 보병으로 쓰러뜨려!"
+  },
+  {
+   "index": 68,
+   "speaker": "Betty",
+   "ko": "적 전차가 접근해!\n바주카병을 보내!"
+  }
+ ]
+}

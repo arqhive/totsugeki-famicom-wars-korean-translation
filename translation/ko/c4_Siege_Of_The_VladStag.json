@@ -1,0 +1,255 @@
+{
+ "file": "c4_Siege_Of_The_VladStagJapanese.str",
+ "scene": "c4_Siege_Of_The_VladStag",
+ "entries": [
+  {
+   "index": 1,
+   "speaker": "Betty",
+   "ko": "블라드 황제와 그 일당을 블라드성으로\n몰아넣었어!\n이제 놓치지 않겠어!"
+  },
+  {
+   "index": 2,
+   "speaker": "Betty",
+   "ko": "블라드가 도망치기 전에\n바리케이드를 뚫고 성으로 돌입해!"
+  },
+  {
+   "index": 3,
+   "speaker": "Nova",
+   "ko": "공격 헬기로 지원하겠소!\n얼른 끝냅시다!\n그리고 내 손으로 아버지의 원수를 갚겠소!"
+  },
+  {
+   "index": 4,
+   "speaker": "Betty",
+   "ko": "블라드성으로 가는 길에는\n세 개의 관문이 버티고 있어!"
+  },
+  {
+   "index": 5,
+   "speaker": "Betty",
+   "ko": "맞아! 커다란 관문이야!\n관문 근처의 점령 지점을\n차지하면 문이 열려."
+  },
+  {
+   "index": 6,
+   "speaker": "Nova",
+   "ko": "토치카 하나를 처리했다!\n이 기세다!"
+  },
+  {
+   "index": 7,
+   "speaker": "Vlad",
+   "ko": "♪♪"
+  },
+  {
+   "index": 8,
+   "speaker": "Betty",
+   "ko": "점령 지점을 차지해서\n관문을 열어!"
+  },
+  {
+   "index": 9,
+   "speaker": "Betty",
+   "ko": "♪♪"
+  },
+  {
+   "index": 10,
+   "speaker": "Betty",
+   "ko": "잘했어!\n첫 번째 관문이 열렸어!"
+  },
+  {
+   "index": 11,
+   "speaker": "Betty",
+   "ko": "좋아!\n두 번째 관문도 통과할 수 있어!"
+  },
+  {
+   "index": 12,
+   "speaker": "Betty",
+   "ko": "세 번째 관문도 열렸어!\n자, 블라드성으로 돌격해!\n이번이 마지막 기회야."
+  },
+  {
+   "index": 13,
+   "speaker": "Betty",
+   "ko": "♪♪"
+  },
+  {
+   "index": 14,
+   "ko": "제1관문을 점령하라"
+  },
+  {
+   "index": 15,
+   "ko": "제2관문을 점령하라"
+  },
+  {
+   "index": 16,
+   "ko": "제3관문을 점령하라"
+  },
+  {
+   "index": 17,
+   "ko": "성의 점령 지점을 차지하라 (0/2)"
+  },
+  {
+   "index": 18,
+   "speaker": "Betty",
+   "ko": "엑실바니아군 폭격기 접근!"
+  },
+  {
+   "index": 19,
+   "speaker": "Nova",
+   "ko": "고르기 대제의 이름으로!\n공격 개시!"
+  },
+  {
+   "index": 20,
+   "speaker": "Vlad",
+   "ko": "한 발짝도 다가오지 못하게 해라!\n몸으로라도 막아라!\n"
+  },
+  {
+   "index": 21,
+   "speaker": "Vlad",
+   "ko": "물러서지 마라! 두려워하지 마라!\n목숨을 잃더라도 승진과 훈장을\n내려 줄 테니!\n"
+  },
+  {
+   "index": 22,
+   "speaker": "Vlad",
+   "ko": "♪♪"
+  },
+  {
+   "index": 23,
+   "speaker": "Betty",
+   "ko": "♪♪"
+  },
+  {
+   "index": 24,
+   "ko": "성의 점령 지점을 차지하라 (1/2)"
+  },
+  {
+   "index": 25,
+   "speaker": "Betty",
+   "ko": "해냈어! 성이 함락됐어!\n노바 원수님이 달아난 블라드 황제를\n쫓아가신 모양이야."
+  },
+  {
+   "index": 26,
+   "speaker": "Vlad",
+   "ko": "「엑실바니아 제국 재건」이라는\n짐의 야망이 물거품이 되었다…!\n베티 준장, 네놈을 저주하겠다!"
+  },
+  {
+   "index": 27,
+   "speaker": "Betty",
+   "ko": "축하해!\n엑실바니아가 패배했어!"
+  },
+  {
+   "index": 28,
+   "speaker": "Betty",
+   "ko": "잊지 마!\n점령 지점을 차지해서\n관문을 여는 거야."
+  },
+  {
+   "index": 29,
+   "speaker": "Betty",
+   "ko": "주저하지 말고 전진해!\n제2관문에 증원 부대가 도착했어!"
+  },
+  {
+   "index": 30,
+   "speaker": "Vlad",
+   "ko": "기세 좋게 쳐들어오더니\n그 꼴 좀 보아라!"
+  },
+  {
+   "index": 31,
+   "speaker": "Betty",
+   "ko": "부대 전멸!\n언제 들어도 싫은 말이야…\n조금만 더 하면 됐는데…"
+  },
+  {
+   "index": 32,
+   "speaker": "Nova",
+   "ko": "자, 나는 블라드 황제와\n결판을 내야겠군…"
+  },
+  {
+   "index": 33,
+   "speaker": "Vlad",
+   "ko": "♪♪"
+  },
+  {
+   "index": 34,
+   "speaker": "Betty",
+   "ko": "♪♪"
+  },
+  {
+   "index": 35,
+   "speaker": "Vlad",
+   "ko": "병사들이여! 즉시 성으로 돌아와라!\n지금은 무조건 성을 지켜라!"
+  },
+  {
+   "index": 36,
+   "speaker": "Betty",
+   "ko": "병사가 없으면 블라드성을\n점령할 수 없어! 임무 실패야."
+  },
+  {
+   "index": 37,
+   "speaker": "Nova",
+   "ko": "공격 헬기, 공격 개시!\n지금이야말로 조국의 원한을 갚겠다!"
+  },
+  {
+   "index": 38,
+   "speaker": "Betty",
+   "ko": "적 대공 유닛을 처리해.\n툰드라군 공격 헬기를 지켜야 해."
+  },
+  {
+   "index": 40,
+   "speaker": "Vlad",
+   "ko": "♪♪"
+  },
+  {
+   "index": 41,
+   "speaker": "Vlad",
+   "ko": "♪♪"
+  },
+  {
+   "index": 42,
+   "ko": "성의 점령 지점을 차지하라 (2/2)"
+  },
+  {
+   "index": 43,
+   "speaker": "Nova",
+   "ko": "♪♪"
+  },
+  {
+   "index": 44,
+   "speaker": "Nova",
+   "ko": "공격 헬기 부대를 하나 더 투입하겠소.\n그쪽은 남은 대공 부대를 처리해\n주시오!\n"
+  },
+  {
+   "index": 45,
+   "speaker": "Nova",
+   "ko": "아버지의 사병 부대에서 보병을 보내겠소!\n반드시 당신을 지키겠소, 베티!"
+  },
+  {
+   "index": 46,
+   "speaker": "Nova",
+   "ko": "♪♪"
+  },
+  {
+   "index": 47,
+   "speaker": "Nova",
+   "ko": "힘내시오, 베티!\n우리는 무적의 팀 아니오!\n그렇지 않소?"
+  },
+  {
+   "index": 48,
+   "speaker": "Nova",
+   "ko": "공격 헬기 한 대가 당했다!\n내 결의는 더욱 굳건해졌다!\n블라드 황제! 반드시 원수를 갚아 주마!"
+  },
+  {
+   "index": 49,
+   "speaker": "Nova",
+   "ko": "마지막 공격 헬기까지 당했나…!\n이제 당신을 도울 수 없겠소…\n베티, 행운을 비오!"
+  },
+  {
+   "index": 50,
+   "speaker": "Ubel",
+   "ko": "블라드님, 방어는 우벨한테 맡겨 줘…\n우벨, 엑실바니아에\n충성 맹세했다. 아마 증명한다!"
+  },
+  {
+   "index": 51,
+   "speaker": "Vlad",
+   "ko": "헛소리 마라, 우벨!\n네놈보다는\n원숭이가 낫겠다!"
+  },
+  {
+   "index": 52,
+   "speaker": "Vlad",
+   "ko": "♪♪"
+  }
+ ]
+}
