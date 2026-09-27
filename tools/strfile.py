@@ -85,7 +85,7 @@ if __name__ == '__main__':
     import glob
     import sys
     ok = bad = 0
-    for p in sorted(glob.glob(sys.argv[1] + '/*.str')):
+    for p in sorted(glob.glob(glob.escape(sys.argv[1]) + '/*.str')):
         if build(load(p)) == open(p, 'rb').read():
             ok += 1
         else:

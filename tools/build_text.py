@@ -20,17 +20,18 @@ import paths
 import strfile
 
 SRC = str(paths.JP_DATA)
+ESC = glob.escape(SRC)  # 폴더 이름의 [GC] 같은 대괄호를 glob 패턴으로 보지 않게
 UNUSED = {'loading_screen', 'fmvsubtitles', 'AttractMode'}  # 일본판에서 쓰지 않는 폰트
 GLOB = 'globjap.str'
 
 
 def _fonts_by_lower():
     return {os.path.basename(p)[:-4].lower(): os.path.basename(p)[:-4]
-            for p in glob.glob(f'{SRC}/font/*.wdf') if os.path.getsize(p)}
+            for p in glob.glob(f'{ESC}/font/*.wdf') if os.path.getsize(p)}
 
 
 def _strs_by_lower():
-    return {os.path.basename(p).lower(): os.path.basename(p) for p in glob.glob(f'{SRC}/Strings/*.str')}
+    return {os.path.basename(p).lower(): os.path.basename(p) for p in glob.glob(f'{ESC}/Strings/*.str')}
 
 
 def font_of(strname):
@@ -48,7 +49,7 @@ def str_of(font):
 
 def ascii_fonts():
     out = []
-    for p in glob.glob(f'{SRC}/font/*.wdf'):
+    for p in glob.glob(f'{ESC}/font/*.wdf'):
         n = os.path.basename(p)[:-4]
         if n not in ('loading_screen', 'fmvsubtitles') and os.path.getsize(p) > 600:
             out.append(n)
@@ -140,7 +141,7 @@ def build(kor, out_root):
     any_tab = tables[ascii_fonts()[0]]
     write_str(GLOB, kor[GLOB], any_tab, True, out_root)
     # 스토리
-    for p in sorted(glob.glob(f'{SRC}/Strings/*_Japanese.str')):
+    for p in sorted(glob.glob(f'{ESC}/Strings/*_Japanese.str')):
         sname = os.path.basename(p)
         name = font_of(sname)
         if not name or name in tables or sname not in kor:

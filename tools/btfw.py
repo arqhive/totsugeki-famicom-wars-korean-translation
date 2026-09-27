@@ -56,7 +56,7 @@ if __name__ == '__main__':
     import sys
     import tempfile, os
     ok = 0
-    for p in sorted(glob.glob(sys.argv[1] + '/*.btf')):
+    for p in sorted(glob.glob(glob.escape(sys.argv[1]) + '/*.btf')):
         try:
             f = load(p)
         except AssertionError:

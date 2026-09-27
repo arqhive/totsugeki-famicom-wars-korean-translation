@@ -24,7 +24,7 @@ def _load():
     shapes, cells, known = pickle.load(open(pk, 'rb'))
     R = json.load(open(paths.DATA / 'review.json', encoding='utf-8'))
     fix = dict(known)
-    for p in sorted(glob.glob(str(paths.DATA / 'labels' / '*.txt'))):
+    for p in sorted(glob.glob(os.path.join(glob.escape(str(paths.DATA / 'labels')), '*.txt'))):
         n = int(os.path.basename(p)[:2])
         chars = [c for c in open(p, encoding='utf-8').read() if c not in '\r\n']
         assert len(chars) == min(120, len(R) - n * 120), p

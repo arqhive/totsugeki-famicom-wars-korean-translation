@@ -35,7 +35,7 @@ def files():
     for s in STORY_ORDER:
         out.append((f'{s}_Japanese.str', s, '스토리', s))
     missions = []
-    for p in glob.glob(str(paths.JP_DATA / 'Strings' / '*Japanese.str')):
+    for p in glob.glob(os.path.join(glob.escape(str(paths.JP_DATA / 'Strings')), '*Japanese.str')):
         b = os.path.basename(p)
         f = build_text.font_of(b)
         if f and f in build_text.ascii_fonts() and not f.startswith('frontend'):

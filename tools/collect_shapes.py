@@ -43,7 +43,7 @@ def _sheets(path):
 def collect():
     src = paths.ensure_jp()
     shapes, cells, known = {}, {}, {}
-    for p in sorted(glob.glob(str(src / 'font' / '*.wdf'))):
+    for p in sorted(glob.glob(os.path.join(glob.escape(str(src / 'font')), '*.wdf'))):
         name = os.path.basename(p)[:-4]
         w = open(p, 'rb').read()
         if name in SKIP or not w:
