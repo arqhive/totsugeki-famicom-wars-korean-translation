@@ -48,7 +48,7 @@
 
 ### 실행 환경
 
-- **확인함**: Dolphin.
+- **확인함**: Dolphin, Wii U vWii + Nintendont.
 
 ### 알려진 문제
 
