@@ -5,17 +5,17 @@
   - 일본판 ISO   Totsugeki!! Famicom Wars (Japan).iso
       CRC32 ED987629 / MD5 edd9c78deed24f0807c3ed380a8f61d8
       (RVZ·GCM 등으로 갖고 계시면 Dolphin으로 ISO 변환 후 사용)
-  - 패치 파일     TotsugekiFamicomWars_KO_v0.1.xdelta
+  - 패치 파일     G8WJ_KPatch_v0.1.xdelta
   - 패치 도구     xdelta3 또는 Delta Patcher 같은 GUI 도구
 
 ■ 적용 방법
   1) Delta Patcher (GUI)
      - Original file: 일본판 ISO
-     - XDelta patch:  TotsugekiFamicomWars_KO_v0.1.xdelta
+     - XDelta patch:  G8WJ_KPatch_v0.1.xdelta
      - Apply patch 클릭
 
   2) xdelta3 (명령줄)
-     xdelta3 -d -s "Totsugeki!! Famicom Wars (Japan).iso" TotsugekiFamicomWars_KO_v0.1.xdelta "Totsugeki!! Famicom Wars (Korean).iso"
+     xdelta3 -d -s "Totsugeki!! Famicom Wars (Japan).iso" G8WJ_KPatch_v0.1.xdelta "Totsugeki!! Famicom Wars (Korean).iso"
 
   ※ 북미판(Battalion Wars)·유럽판에는 적용할 수 없습니다.
 
@@ -33,6 +33,7 @@
 
 ■ 확인 환경
   - Dolphin 에뮬레이터
+  - 실기: Wii U vWii + Nintendont
 
 ■ 알려진 문제
   - 승리·패배 연출 글자(VICTORY, DEFEAT)와 배경 속 간판은 원본부터 영문이라 그대로 두었습니다.
