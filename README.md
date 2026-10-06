@@ -23,11 +23,11 @@
 
 ### 적용 방법
 
-1. [배포 페이지](../../releases/latest)에서 `TotsugekiFamicomWars_KO_v0.1.xdelta`를 받습니다.
+1. [배포 페이지](../../releases/latest)에서 `G8WJ_KPatch_v0.1.xdelta`를 받습니다.
 2. 일본판 원본 ISO에 패치를 적용합니다. xdelta3에서는 다음처럼 실행합니다.
 
    ```
-   xdelta3 -d -s "Totsugeki!! Famicom Wars (Japan).iso" TotsugekiFamicomWars_KO_v0.1.xdelta "Totsugeki!! Famicom Wars (Korean).iso"
+   xdelta3 -d -s "Totsugeki!! Famicom Wars (Japan).iso" G8WJ_KPatch_v0.1.xdelta "Totsugeki!! Famicom Wars (Korean).iso"
    ```
 
 3. 결과 파일의 확인값을 아래 표와 비교합니다.
