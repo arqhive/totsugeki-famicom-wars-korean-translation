@@ -8,3 +8,7 @@ work/
 
 __pycache__/
 *.pyc
+
+# 배포용 패처 산출물(make_patcher.py, 릴리즈에만 첨부)
+release/*.zip
+release/G8WJ_KPatch_v*/
