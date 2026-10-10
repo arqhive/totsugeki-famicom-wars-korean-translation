@@ -18,33 +18,25 @@
 
 ### 준비물
 
-- 일본판 ISO. 북미판(Battalion Wars)·유럽판에는 적용할 수 없습니다. RVZ·GCM으로 갖고 있다면 Dolphin으로 ISO로 바꾼 뒤 적용하세요.
-- xdelta 패치 도구. [Delta Patcher](https://github.com/marco-calautti/DeltaPatcher)(GUI)나 [xdelta3](https://github.com/jmacd/xdelta-gpl/releases)(명령줄)를 쓰면 됩니다.
+- 일본판 디스크 이미지(게임 ID `G8WJ01`). 북미판(Battalion Wars)·유럽판에는 적용할 수 없습니다.
+- Windows 10 이상. 패처가 기본으로 들어 있는 PowerShell을 씁니다.
 
 ### 적용 방법
 
-1. [배포 페이지](../../releases/latest)에서 `G8WJ_KPatch_v0.1.1.xdelta`를 받습니다.
-2. 일본판 원본 ISO에 패치를 적용합니다. xdelta3에서는 다음처럼 실행합니다.
+1. [배포 페이지](../../releases/latest)에서 `G8WJ_KPatch_v0.1.1.zip`을 받아 풉니다.
+2. 풀린 폴더에 원본 이미지를 넣고 `패치하기.bat`을 더블클릭합니다. 원본을 `패치하기.bat` 위에 끌어다 놓아도 됩니다.
+3. 같은 폴더에 `Totsugeki!! Famicom Wars (Korean).iso`가 생깁니다. 원본 파일은 그대로 남습니다.
 
-   ```
-   xdelta3 -d -s "Totsugeki!! Famicom Wars (Japan).iso" G8WJ_KPatch_v0.1.1.xdelta "Totsugeki!! Famicom Wars (Korean).iso"
-   ```
+패처가 게임 파일을 하나하나 원본과 비교하므로, 덤프 방식에 따라 ISO 전체 MD5가 달라도 게임 파일만 같으면 적용됩니다.
+자세한 방법과 오류 메시지는 [`README_한국어.txt`](release/README_한국어.txt)를 참고하세요.
 
-3. 결과 파일의 확인값을 아래 표와 비교합니다.
+| 원본 형식 | 결과 |
+|---|---|
+| ISO, GCM | ISO |
+| CISO, WIA, WDF, GCZ | ISO (동봉한 wit으로 변환 후 적용) |
+| RVZ, NKit | 지원 안 함 (ISO로 바꾼 뒤 적용) |
 
-자세한 방법은 [`README_한국어.txt`](release/README_한국어.txt)를 참고하세요.
-
-### 파일 확인값
-
-| 항목 | 원본 일본판 | 패치 적용 결과 (v0.1.1) |
-|---|---|---|
-| 크기 | 1,459,978,240 바이트 | 1,459,978,240 바이트 |
-| CRC32 | `ED987629` | `8AA50C96` |
-| MD5 | `edd9c78deed24f0807c3ed380a8f61d8` | `d02a9e730c04f0c4100ce262de25fa5b` |
-| SHA-1 | `2abe94f9e12918d5688f1995beff198a2a096350` | `2264a465e281c337db8f12cffd194fddce4d6036` |
-| SHA-256 | `15d338ce604215424c975dbbabaae463f009bff9d6b8af83e9a058a6f823055e` | `c79acb792c7b30496c3fdbb2c18fe329d0228ba15ae328709f4dcf23d652b82f` |
-
-원본 파일명 예: `Totsugeki!! Famicom Wars (Japan).iso`
+Redump 정본 ISO(`Totsugeki!! Famicom Wars (Japan).iso`, 1,459,978,240 바이트, MD5 `edd9c78deed24f0807c3ed380a8f61d8`)에 적용하면 결과 MD5는 `d02a9e730c04f0c4100ce262de25fa5b`이고, 패처가 끝에 「정본(Redump) 원본 기준 결과와 일치합니다」를 출력합니다.
 
 ### 실행 환경
 
@@ -65,7 +57,7 @@
 - 일본판 ISO. 저장소 루트나 `iso/`에 두거나 환경 변수 `BW_JP_ISO`로 지정합니다.
 - 맑은 고딕(`C:/Windows/Fonts/malgun.ttf`). 한글 글자를 그리는 데 씁니다.
 - 원문 판독 도구(`export_text.py`, `review_sheets.py`)는 Yu Gothic Bold(`YuGothB.ttc`)도 씁니다.
-- xdelta3. 배포용 패치를 만들 때만 필요하며, PATH에 두거나 환경 변수 `XDELTA3` 또는 `work/xdelta3.exe`로 둡니다.
+- 배포용 패처를 만들 때만 wit(cygwin판, DLL 포함)과 xdelta3을 `work/bin`에 둡니다. 패처 zip에 함께 들어갑니다.
 
 ### 빌드
 
@@ -73,8 +65,8 @@
 # 한글 ISO 만들기 (work/TotsugekiFamicomWars_KO.iso)
 python tools/build.py
 
-# 배포용 패치까지: 빌드, xdelta 패치 생성, 적용 결과 해시 검증
-python tools/make_patch.py 0.1.1
+# 배포용 패처: 빌드 ISO와 원본에서 바뀐 파일 차분을 만들어 release/G8WJ_KPatch_v0.1.1.zip 으로 묶음
+python tools/make_patcher.py --orig "Totsugeki!! Famicom Wars (Japan).iso" --build work/TotsugekiFamicomWars_KO.iso     --out release/G8WJ_KPatch_v0.1.1 --version 0.1.1 --bin work/bin --readme release/README_한국어.txt
 ```
 
 처음 실행하면 일본판 ISO를 `work/jp`에 추출합니다. 번역을 검사한 뒤 문자열 40개, 장면 폰트 39벌, 그림 4장(디스크 배너 포함)을 만들어 바뀐 파일 121개로 ISO를 다시 구성하고, 파일 3,576개를 모두 원본·빌드 결과와 비교해 검증합니다.
@@ -104,7 +96,8 @@ translation/
 docs/
   TECHNICAL.md     파일 포맷과 한글화 방식
   releases/        릴리즈 노트 사본
-release/           배포용 xdelta 패치와 사용자 설명서
+patcher/           사용자용 패처(패치하기.bat, patch.ps1)
+release/           사용자 설명서 (패처 폴더·zip 은 git 제외)
 work/              (git 제외) 추출본·빌드 결과·원문
 ```
 
