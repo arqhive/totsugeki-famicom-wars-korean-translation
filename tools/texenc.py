@@ -68,3 +68,13 @@ def encode_cmpr(img):
     for k in range(4):
         out[:, 4 + k] = (bits >> np.uint64(24 - 8 * k)) & np.uint64(255)
     return out.tobytes()
+
+
+def encode_rgb5a3(img):
+    """RGBA PIL 이미지 → RGB5A3 바이트(4x4 타일, 빅엔디언). 배너(opening.bnr)용.
+    알파가 거의 불투명(≥0xE0)이면 RGB555, 아니면 A3·RGB444."""
+    w, h = img.size
+    a = np.asarray(img.convert('RGBA'), np.uint8).reshape(-1, 4)
+    v = _to_rgb5a3(a).reshape(h, w)
+    tiles = v.reshape(h // 4, 4, w // 4, 4).transpose(0, 2, 1, 3)
+    return tiles.astype('>u2').tobytes()

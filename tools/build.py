@@ -71,6 +71,26 @@ def build_images():
     for path, d in files.items():
         (OUT_DATA / path).parent.mkdir(parents=True, exist_ok=True)
         open(OUT_DATA / path, 'wb').write(d)
+    build_banner()
+
+
+BANNER = 'banner.png'   # tools/assets 에 있을 때만 디스크 배너(opening.bnr) 그림을 바꾼다
+
+
+def build_banner():
+    """opening.bnr: 0x20 부터 96x32 RGB5A3 그림(0x1800바이트). 문구는 Shift-JIS 전용이라 그대로 둔다."""
+    src = paths.ASSETS / BANNER
+    if not src.exists():
+        return
+    img = Image.open(src).convert('RGBA')
+    assert img.size == (96, 32), (BANNER, img.size)
+    d = bytearray(open(paths.JP / 'opening.bnr', 'rb').read())
+    assert d[:4] == b'BNR1'
+    pix = texenc.encode_rgb5a3(img)
+    assert len(pix) == 0x1800
+    d[0x20:0x20 + 0x1800] = pix
+    open(OUT_DATA / 'opening.bnr', 'wb').write(d)
+    print('  %-14s RGB5A3 배너 교체' % 'opening.bnr')
 
 
 def verify(src_iso, out_iso):

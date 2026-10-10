@@ -1,5 +1,5 @@
 # 배포용 xdelta 패치 생성: 한글 ISO 빌드 → xdelta3 패치 → 적용해서 결과 검증
-#   python tools/make_patch.py [버전]        (기본 0.1)
+#   python tools/make_patch.py [버전]        (기본 0.1.1)
 # xdelta3 실행 파일은 PATH 에 있거나, 환경 변수 XDELTA3 또는 work/xdelta3.exe 로 둡니다.
 import hashlib
 import os
@@ -11,9 +11,9 @@ import zlib
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import paths
 
-VER = sys.argv[1] if len(sys.argv) > 1 else '0.1'
+VER = sys.argv[1] if len(sys.argv) > 1 else '0.1.1'
 ISO = paths.WORK / 'TotsugekiFamicomWars_KO.iso'
-PATCH = paths.RELEASE / ('TotsugekiFamicomWars_KO_v%s.xdelta' % VER)
+PATCH = paths.RELEASE / ('G8WJ_KPatch_v%s.xdelta' % VER)  # 릴리즈 첨부 이름 규칙 [게임 코드]_KPatch_[버전]
 
 
 def xdelta3():
