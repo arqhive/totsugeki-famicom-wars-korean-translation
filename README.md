@@ -3,7 +3,7 @@
 *Totsugeki!! Famicom Wars* (게임큐브, 일본판 `G8WJ01`) 비공식 한국어 팬 패치입니다.
 대사는 일본어판 원문을 기준으로 번역했습니다.
 
-**제작: arqhive** · **최신 버전: [v0.1.1](../../releases/tag/v0.1.1)**
+**제작: arqhive** · **최신 버전: [v0.1.2](../../releases/tag/v0.1.2)**
 
 - 대사 전체를 한글화했습니다(미션 24개의 무전 대사·목표, 스토리 무비 자막 13편).
 - 메뉴 전체를 한글화했습니다(메인 메뉴, 설정, 유닛 설명, 메모리카드 메시지).
@@ -23,7 +23,7 @@
 
 ### 적용 방법
 
-1. [배포 페이지](../../releases/latest)에서 `G8WJ_KPatch_v0.1.1.zip`을 받아 풉니다.
+1. [배포 페이지](../../releases/latest)에서 `G8WJ_KPatch_v0.1.2.zip`을 받아 풉니다.
 2. 풀린 폴더에 원본 이미지를 넣고 `패치하기.bat`을 더블클릭합니다. 원본을 `패치하기.bat` 위에 끌어다 놓아도 됩니다.
 3. 같은 폴더에 `Totsugeki!! Famicom Wars (Korean).iso`가 생깁니다. 원본 파일은 그대로 남습니다.
 
@@ -55,7 +55,7 @@ Redump 정본 ISO(`Totsugeki!! Famicom Wars (Japan).iso`, 1,459,978,240 바이�
 
 - Python 3.11 이상. `pip install -r requirements.txt`로 numpy, Pillow를 설치합니다.
 - 일본판 ISO. 저장소 루트나 `iso/`에 두거나 환경 변수 `BW_JP_ISO`로 지정합니다.
-- 맑은 고딕(`C:/Windows/Fonts/malgun.ttf`). 한글 글자를 그리는 데 씁니다.
+- G마켓 산스 Medium(`GmarketSansMedium.otf`). 한글 글자를 그리는 데 씁니다. `tools/fonts`에 두거나 PC에 설치합니다.
 - 원문 판독 도구(`export_text.py`, `review_sheets.py`)는 Yu Gothic Bold(`YuGothB.ttc`)도 씁니다.
 - 배포용 패처를 만들 때만 wit(cygwin판, DLL 포함)과 xdelta3을 `work/bin`에 둡니다. 패처 zip에 함께 들어갑니다.
 
@@ -65,8 +65,8 @@ Redump 정본 ISO(`Totsugeki!! Famicom Wars (Japan).iso`, 1,459,978,240 바이�
 # 한글 ISO 만들기 (work/TotsugekiFamicomWars_KO.iso)
 python tools/build.py
 
-# 배포용 패처: 빌드 ISO와 원본에서 바뀐 파일 차분을 만들어 release/G8WJ_KPatch_v0.1.1.zip 으로 묶음
-python tools/make_patcher.py --orig "Totsugeki!! Famicom Wars (Japan).iso" --build work/TotsugekiFamicomWars_KO.iso     --out release/G8WJ_KPatch_v0.1.1 --version 0.1.1 --bin work/bin --readme release/README_한국어.txt
+# 배포용 패처: 빌드 ISO와 원본에서 바뀐 파일 차분을 만들어 release/G8WJ_KPatch_v0.1.2.zip 으로 묶음
+python tools/make_patcher.py --orig "Totsugeki!! Famicom Wars (Japan).iso" --build work/TotsugekiFamicomWars_KO.iso     --out release/G8WJ_KPatch_v0.1.2 --version 0.1.2 --bin work/bin --readme release/README_한국어.txt
 ```
 
 처음 실행하면 일본판 ISO를 `work/jp`에 추출합니다. 번역을 검사한 뒤 문자열 40개, 장면 폰트 39벌, 그림 4장(디스크 배너 포함)을 만들어 바뀐 파일 121개로 ISO를 다시 구성하고, 파일 3,576개를 모두 원본·빌드 결과와 비교해 검증합니다.
