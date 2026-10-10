@@ -111,7 +111,7 @@ def make_font(name, glyph_chars, out_dir, ascii_ok):
             else:
                 g, w = korglyph.render(ch)
                 dst[:] = g
-                if not (0xAC00 <= ord(ch) <= 0xD7A3) and ch not in '…—「」『』♪':
+                if not (0xAC00 <= ord(ch) <= 0xD7A3) and ch not in '…—':
                     xs = np.where((g > 0).any(0))[0]  # 기호·영숫자는 실제 잉크 폭 + 1 을 글자 간격으로
                     w = min(18, max(6, int(xs.max()) + 2)) if len(xs) else 8
                 widths.append(w)

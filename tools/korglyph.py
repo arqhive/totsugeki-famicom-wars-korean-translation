@@ -1,13 +1,17 @@
 """한글 글자 렌더(원본 스타일 재현판).
 4배 해상도에서: 글자 채움(흰색) + 둥근 1px 테두리(검정) + 테두리를 아래로 2px 내린 그림자(검정)를 합성하고,
 22x22 로 줄인 뒤 원본 팔레트(16색, 반투명 포함)에서 가장 가까운 색으로 바꾼다."""
+import os
 import struct
 
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
 SS = 4
-FONT = 'C:/Windows/Fonts/malgun.ttf'
+_HERE = os.path.dirname(os.path.abspath(__file__))
+FONT = next(p for p in (os.path.join(_HERE, 'fonts', 'GmarketSansMedium.otf'),
+                        os.path.expandvars(r'%LOCALAPPDATA%\Microsoft\Windows\Fonts\GmarketSansMedium.otf'),
+                        'C:/Windows/Fonts/GmarketSansMedium.otf') if os.path.exists(p))
 SIZE = 17
 OUT_R = 1.15      # 테두리 반지름(px)
 SHADOW_DY = 2     # 그림자 아래 이동(px)
