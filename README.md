@@ -3,11 +3,12 @@
 *Totsugeki!! Famicom Wars* (게임큐브, 일본판 `G8WJ01`) 비공식 한국어 팬 패치입니다.
 대사는 일본어판 원문을 기준으로 번역했습니다.
 
-**제작: arqhive** · **최신 버전: [v0.1.2](../../releases/tag/v0.1.2)**
+**제작: arqhive** · **최신 버전: [v0.2](../../releases/tag/v0.2)**
 
 - 대사 전체를 한글화했습니다(미션 24개의 무전 대사·목표, 스토리 무비 자막 13편).
 - 메뉴 전체를 한글화했습니다(메인 메뉴, 설정, 유닛 설명, 메모리카드 메시지).
 - 타이틀 로고, 시작할 때 나오는 경고 화면, 디스크 배너 그림을 한글화했습니다.
+- 오프닝 로고 무비를 한글 로고로 새로 만들었습니다. 원본과 같은 연출로 「돌격!!」·「패미컴」·「워즈★」가 차례로 날아들어 번쩍입니다.
 - 장면마다 쓰인 한글만 모아 게임 폰트를 새로 만들었습니다. 원본과 같은 흰 글씨·검은 테두리·그림자 모양입니다.
 - **원본과 같은 1.4GB 디스크 크기를 유지합니다.**
 
@@ -23,7 +24,7 @@
 
 ### 적용 방법
 
-1. [배포 페이지](../../releases/latest)에서 `G8WJ_KPatch_v0.1.2.zip`을 받아 풉니다.
+1. [배포 페이지](../../releases/latest)에서 `G8WJ_KPatch_v0.2.zip`을 받아 풉니다.
 2. 풀린 폴더에 원본 이미지를 넣고 `패치하기.bat`을 더블클릭합니다. 원본을 `패치하기.bat` 위에 끌어다 놓아도 됩니다.
 3. 같은 폴더에 `Totsugeki!! Famicom Wars (Korean).iso`가 생깁니다. 원본 파일은 그대로 남습니다.
 
@@ -36,7 +37,7 @@
 | CISO, WIA, WDF, GCZ | ISO (동봉한 wit으로 변환 후 적용) |
 | RVZ, NKit | 지원 안 함 (ISO로 바꾼 뒤 적용) |
 
-Redump 정본 ISO(`Totsugeki!! Famicom Wars (Japan).iso`, 1,459,978,240 바이트, MD5 `edd9c78deed24f0807c3ed380a8f61d8`)에 적용하면 결과 MD5는 `d02a9e730c04f0c4100ce262de25fa5b`이고, 패처가 끝에 「정본(Redump) 원본 기준 결과와 일치합니다」를 출력합니다.
+Redump 정본 ISO(`Totsugeki!! Famicom Wars (Japan).iso`, 1,459,978,240 바이트, MD5 `edd9c78deed24f0807c3ed380a8f61d8`)에 적용하면 결과 MD5는 `c296125522b6e8cb057f58abe9c6c24e`이고, 패처가 끝에 「정본(Redump) 원본 기준 결과와 일치합니다」를 출력합니다.
 
 ### 실행 환경
 
@@ -45,7 +46,7 @@ Redump 정본 ISO(`Totsugeki!! Famicom Wars (Japan).iso`, 1,459,978,240 바이�
 ### 알려진 문제
 
 - 승리·패배 연출 글자(VICTORY, DEFEAT)와 배경 속 간판(FORT GRIDIRON, STOP)은 일본판 원본부터 영문 디자인이라 그대로 두었습니다.
-- 스토리 무비와 데모 영상 안에 그려진 글자는 영상의 일부라 바꾸지 않았습니다. 무비 자막은 모두 한글로 나옵니다.
+- 스토리 무비와 데모 영상 안에 그려진 글자는 영상의 일부라 바꾸지 않았습니다. 무비 자막은 모두 한글로 나옵니다. 오프닝 로고 무비만 새로 만들었습니다.
 - 게임 안 텍스처 1,187종과 디스크 배너·세이브 아이콘을 모두 확인했습니다. 일본어가 들어간 그림은 타이틀 로고, 경고 화면 두 장, 디스크 배너 그림까지 4장이며 모두 한글화했습니다.
 - 게임 목록에 나오는 디스크 배너의 제목·설명 문구와 메모리카드의 세이브 이름은 Shift-JIS 전용 칸이라 한글을 넣을 수 없어 일본어로 남습니다.
 
@@ -53,11 +54,12 @@ Redump 정본 ISO(`Totsugeki!! Famicom Wars (Japan).iso`, 1,459,978,240 바이�
 
 ### 요구 사항
 
-- Python 3.11 이상. `pip install -r requirements.txt`로 numpy, Pillow를 설치합니다.
+- Python 3.11 이상. `pip install -r requirements.txt`로 numpy, Pillow, SciPy를 설치합니다.
 - 일본판 ISO. 저장소 루트나 `iso/`에 두거나 환경 변수 `BW_JP_ISO`로 지정합니다.
 - G마켓 산스 Medium(`GmarketSansMedium.otf`). 한글 글자를 그리는 데 씁니다. `tools/fonts`에 두거나 PC에 설치합니다.
 - 원문 판독 도구(`export_text.py`, `review_sheets.py`)는 Yu Gothic Bold(`YuGothB.ttc`)도 씁니다.
 - 배포용 패처를 만들 때만 wit(cygwin판, DLL 포함)과 xdelta3을 `work/bin`에 둡니다. 패처 zip에 함께 들어갑니다.
+- 오프닝 로고 무비를 처음 만들 때만 HVQM4 디코더가 필요합니다. [Tilka/hvqm4](https://github.com/Tilka/hvqm4)의 `h4m_audio_decode.c`를 `-DNATIVE=1`로 컴파일해 `work/bin/h4m_dec.exe`로 둡니다(예: `python -m ziglang cc -O2 -DNATIVE=1 h4m_audio_decode.c -o h4m_dec.exe`).
 
 ### 빌드
 
@@ -65,11 +67,11 @@ Redump 정본 ISO(`Totsugeki!! Famicom Wars (Japan).iso`, 1,459,978,240 바이�
 # 한글 ISO 만들기 (work/TotsugekiFamicomWars_KO.iso)
 python tools/build.py
 
-# 배포용 패처: 빌드 ISO와 원본에서 바뀐 파일 차분을 만들어 release/G8WJ_KPatch_v0.1.2.zip 으로 묶음
-python tools/make_patcher.py --orig "Totsugeki!! Famicom Wars (Japan).iso" --build work/TotsugekiFamicomWars_KO.iso     --out release/G8WJ_KPatch_v0.1.2 --version 0.1.2 --bin work/bin --readme release/README_한국어.txt
+# 배포용 패처: 빌드 ISO와 원본에서 바뀐 파일 차분을 만들어 release/G8WJ_KPatch_v0.2.zip 으로 묶음
+python tools/make_patcher.py --orig "Totsugeki!! Famicom Wars (Japan).iso" --build work/TotsugekiFamicomWars_KO.iso     --out release/G8WJ_KPatch_v0.2 --version 0.2 --bin work/bin --readme release/README_한국어.txt
 ```
 
-처음 실행하면 일본판 ISO를 `work/jp`에 추출합니다. 번역을 검사한 뒤 문자열 40개, 장면 폰트 39벌, 그림 4장(디스크 배너 포함)을 만들어 바뀐 파일 121개로 ISO를 다시 구성하고, 파일 3,576개를 모두 원본·빌드 결과와 비교해 검증합니다.
+처음 실행하면 일본판 ISO를 `work/jp`에 추출합니다. 번역을 검사한 뒤 문자열 40개, 장면 폰트 39벌, 그림 4장(디스크 배너 포함), 오프닝 로고 무비를 만들어 바뀐 파일 122개로 ISO를 다시 구성하고, 파일 3,576개를 모두 원본·빌드 결과와 비교해 검증합니다.
 같은 입력이면 결과는 바이트 단위로 같습니다. Windows Git Bash에서는 `MSYS_NO_PATHCONV=1 PYTHONIOENCODING=utf-8`을 붙이세요.
 
 ### 번역 수정
@@ -79,6 +81,7 @@ python tools/make_patcher.py --orig "Totsugeki!! Famicom Wars (Japan).iso" --bui
 - 검사: `python tools/check_ko.py`(줄 폭, 줄 수, 한자·가나 혼입, 문장부호). 빌드는 검사를 통과해야 진행됩니다. 줄 폭 한계는 무전 대사 346px(3줄), 미션 목표 410px, 메뉴 557px, 무비 자막 574px입니다.
 - 표기·말투·문장부호 원칙은 [`translation/GLOSSARY.md`](translation/GLOSSARY.md)를 참고하세요.
 - 그림 글씨: [`tools/assets/`](tools/assets)의 PNG를 원본과 같은 크기로 고친 뒤 빌드합니다. `banner.png`(96×32)가 있으면 디스크 배너 그림도 바꿉니다.
+- 오프닝 로고 무비: `python tools/movie/make_title.py`가 원본 무비를 풀어 연출 값(`tools/movie/data`)대로 한글 로고 97장을 그리고 `work/movie/out`에 HVQM4로 묶습니다. 빌드는 이 파일이 없으면 자동으로 만듭니다. 타이틀 로고를 바꿨다면 `work/movie/out`을 지우고 다시 빌드하세요.
 - 그림 재작업: 다시 그린 그림을 `work/GPT/결과/`에 두고 `python tools/gpt_import.py`를 실행하면 게임 크기로 맞춰 `tools/assets`에 넣고 원본·이전·새 그림 비교 시트를 `work/GPT/비교/`에 만듭니다.
 
 `translation/ko/*.json`에는 **번역문만** 들어 있습니다(항목 번호, 화자, 한국어).
@@ -89,7 +92,8 @@ python tools/make_patcher.py --orig "Totsugeki!! Famicom Wars (Japan).iso" --bui
 ```
 tools/             빌드·검사·원문 판독 도구 (paths.py가 기준 경로를 잡음)
   data/            일본어 판독표(글자 모양 묶음과 판독 글자)
-  assets/          한글화 이미지(타이틀 로고, 경고 화면, 디스크 배너)
+  assets/          한글화 이미지(타이틀 로고, 경고 화면, 디스크 배너, 무비용 고해상도 로고)
+  movie/           오프닝 로고 무비 만들기(연출 재현·HVQM4 인코딩은 tools/h4m.py)
 translation/
   ko/              번역 JSON (항목 번호, 화자, 한국어)
   GLOSSARY.md      표기·말투·문장부호 원칙
