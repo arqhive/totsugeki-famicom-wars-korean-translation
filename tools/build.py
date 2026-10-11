@@ -1,5 +1,6 @@
-"""한글 ISO 빌드: 번역 검사 → 문자열·장면 폰트 → 이미지 → ISO 조립 → 검증.
-사용: python tools/build.py [출력 ISO]      (기본 work/TotsugekiFamicomWars_KO.iso)
+"""한글 ISO 빌드: 번역 검사 → 문자열·장면 폰트 → 이미지·무비 → ISO 조립 → 검증.
+사용: python tools/build.py [출력 ISO] [--extra 폴더]      (기본 work/TotsugekiFamicomWars_KO.iso)
+  --extra: ISO 경로 구조 그대로 둔 파일을 더 교체한다(시험용 무비 등).
 """
 import os
 import re
@@ -93,6 +94,17 @@ def build_banner():
     print('  %-14s RGB5A3 배너 교체' % 'opening.bnr')
 
 
+def build_movie():
+    """오프닝 로고 무비: work/movie/out 에 없으면 tools/movie/make_title.py 로 만든다(디코더 필요)."""
+    rel = 'Data/Video/BW_Title_JP.h4m'
+    src = paths.WORK / 'movie' / 'out' / rel
+    if not src.exists():
+        subprocess.run([sys.executable, str(paths.TOOLS / 'movie' / 'make_title.py')], check=True)
+    (OUT_DATA / rel).parent.mkdir(parents=True, exist_ok=True)
+    shutil.copyfile(src, OUT_DATA / rel)
+    print('  %-14s HVQM4 무비 교체(%.1fMB)' % ('BW_Title_JP', src.stat().st_size / 1e6))
+
+
 def verify(src_iso, out_iso):
     a, b = open(src_iso, 'rb'), open(out_iso, 'rb')
     _, _, _, ea = build_iso.read_fst(a)
@@ -115,7 +127,7 @@ def verify(src_iso, out_iso):
     print('  파일 %d개 확인(교체 %d), 겹침 없음' % (len(eb), rep))
 
 
-def main(out_iso):
+def main(out_iso, extra=None):
     paths.ensure_jp()
     print('1) 번역 검사')
     ps = check_ko.check()
@@ -127,8 +139,16 @@ def main(out_iso):
     print('2) 문자열·장면 폰트')
     rep = build_strings()
     print('  폰트 %d벌, 최대 %d자 %d장' % (len(rep), *max(rep.values())))
-    print('3) 이미지')
+    print('3) 이미지·무비')
     build_images()
+    build_movie()
+    if extra:
+        for root, _, fs in os.walk(extra):
+            for f in fs:
+                rel = os.path.relpath(os.path.join(root, f), extra)
+                os.makedirs(OUT_DATA / os.path.dirname(rel), exist_ok=True)
+                shutil.copyfile(os.path.join(root, f), OUT_DATA / rel)
+                print('  %-14s 추가 교체' % rel.replace(os.sep, '/'))
     print('4) ISO 조립')
     src = paths.jp_iso()
     subprocess.run([sys.executable, str(paths.TOOLS / 'build_iso.py'), src, str(out_iso), '--repdir', str(OUT_DATA)], check=True)
@@ -138,4 +158,10 @@ def main(out_iso):
 
 
 if __name__ == '__main__':
-    main(sys.argv[1] if len(sys.argv) > 1 else paths.WORK / 'TotsugekiFamicomWars_KO.iso')
+    args = sys.argv[1:]
+    extra = None
+    if '--extra' in args:
+        i = args.index('--extra')
+        extra = args[i + 1]
+        del args[i:i + 2]
+    main(args[0] if args else paths.WORK / 'TotsugekiFamicomWars_KO.iso', extra)
