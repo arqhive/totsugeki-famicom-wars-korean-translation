@@ -3,6 +3,7 @@
 줄 폭 한계(게임 폰트 폭 기준, 한글 18px, 영문 포함 폰트의 영숫자·공백은 원본 폭, 스토리 폰트의 공백 8px):
   무전 대사(미션·공통의 화자 있는 항목) 346px, 3줄 — 일본어 무전 2,356줄이 340~346px에 몰리고 그 이상이 없다.
   미션의 화자 없는 항목(목표 등) 410px, 스토리 자막 574px, 메뉴 557px(유닛 설명 패널) — 일본어 원문 최대 폭.
+  미션 설명 창(frontend 147~170번) 276px, 10줄 — 실기 사진으로 잰 한도.
 문장부호: 물결표 금지, 말줄임표 뒤 마침표 금지(「….」가 「... .」로 떨어져 보임).
 사용: python tools/check_ko.py      (문제가 있으면 목록을 출력하고 종료 코드 1)
 """
@@ -17,6 +18,8 @@ import paths
 import strfile
 
 RADIO, MISSION, STORY, MENU = 346, 410, 574, 557
+# 미션 설명 창(frontend 147~170번): 실기에서 276px 줄까지 보이고 282px 줄은 끝 글자가 잘림(일본어 원문 최대 270px)
+BRIEF, BRIEF_IDX = 276, (147, 170)
 _W = {}
 
 
@@ -59,6 +62,8 @@ def check():
                 lim, maxl = STORY, None
             elif speaker:
                 lim, maxl = RADIO, 3
+            elif scene.startswith('frontend') and BRIEF_IDX[0] <= i <= BRIEF_IDX[1]:
+                lim, maxl = BRIEF, 10
             elif scene.startswith(('frontend', 'glob')):
                 lim, maxl = MENU, None
             else:
