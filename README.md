@@ -82,6 +82,7 @@ python tools/make_patcher.py --orig "Totsugeki!! Famicom Wars (Japan).iso" --bui
 - 표기·말투·문장부호 원칙은 [`translation/GLOSSARY.md`](translation/GLOSSARY.md)를 참고하세요.
 - 그림 글씨: [`tools/assets/`](tools/assets)의 PNG를 원본과 같은 크기로 고친 뒤 빌드합니다. `banner.png`(96×32)가 있으면 디스크 배너 그림도 바꿉니다.
 - 오프닝 로고 무비: `python tools/movie/make_title.py`가 원본 무비를 풀어 연출 값(`tools/movie/data`)대로 한글 로고 97장을 그리고 `work/movie/out`에 HVQM4로 묶습니다. 빌드는 이 파일이 없으면 자동으로 만듭니다. 타이틀 로고를 바꿨다면 `work/movie/out`을 지우고 다시 빌드하세요.
+- 엔딩 로고 무비: `python tools/movie/make_ending.py`가 마지막 컷씬(`4_3_TheEnd_JP.h4m`) 끝 로고 구간만 한글 로고로 다시 만듭니다. 빌드가 없으면 자동으로 만드는 것은 오프닝과 같습니다.
 - 그림 재작업: 다시 그린 그림을 `work/GPT/결과/`에 두고 `python tools/gpt_import.py`를 실행하면 게임 크기로 맞춰 `tools/assets`에 넣고 원본·이전·새 그림 비교 시트를 `work/GPT/비교/`에 만듭니다.
 
 `translation/ko/*.json`에는 **번역문만** 들어 있습니다(항목 번호, 화자, 한국어).

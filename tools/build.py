@@ -94,15 +94,20 @@ def build_banner():
     print('  %-14s RGB5A3 배너 교체' % 'opening.bnr')
 
 
+MOVIES = [('BW_Title_JP', 'make_title.py'),     # 오프닝 로고
+          ('4_3_TheEnd_JP', 'make_ending.py')]  # 엔딩 컷씬 끝 로고
+
+
 def build_movie():
-    """오프닝 로고 무비: work/movie/out 에 없으면 tools/movie/make_title.py 로 만든다(디코더 필요)."""
-    rel = 'Data/Video/BW_Title_JP.h4m'
-    src = paths.WORK / 'movie' / 'out' / rel
-    if not src.exists():
-        subprocess.run([sys.executable, str(paths.TOOLS / 'movie' / 'make_title.py')], check=True)
-    (OUT_DATA / rel).parent.mkdir(parents=True, exist_ok=True)
-    shutil.copyfile(src, OUT_DATA / rel)
-    print('  %-14s HVQM4 무비 교체(%.1fMB)' % ('BW_Title_JP', src.stat().st_size / 1e6))
+    """로고 무비: work/movie/out 에 없으면 tools/movie/make_*.py 로 만든다(디코더 필요)."""
+    for name, script in MOVIES:
+        rel = f'Data/Video/{name}.h4m'
+        src = paths.WORK / 'movie' / 'out' / rel
+        if not src.exists():
+            subprocess.run([sys.executable, str(paths.TOOLS / 'movie' / script)], check=True)
+        (OUT_DATA / rel).parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(src, OUT_DATA / rel)
+        print('  %-14s HVQM4 무비 교체(%.1fMB)' % (name, src.stat().st_size / 1e6))
 
 
 def verify(src_iso, out_iso):
