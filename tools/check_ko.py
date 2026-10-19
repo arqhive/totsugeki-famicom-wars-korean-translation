@@ -4,6 +4,7 @@
   무전 대사(미션·공통의 화자 있는 항목) 346px, 3줄 — 일본어 무전 2,356줄이 340~346px에 몰리고 그 이상이 없다.
   미션의 화자 없는 항목(목표 등) 410px, 스토리 자막 574px, 메뉴 557px(유닛 설명 패널) — 일본어 원문 최대 폭.
   미션 설명 창(frontend 147~170번) 276px, 10줄 — 실기 사진으로 잰 한도.
+  조언 창(glob 208~279번) 258px, 7줄, 6·7번째 줄은 216px — 실기 사진으로 잰 한도.
 문장부호: 물결표 금지, 말줄임표 뒤 마침표 금지(「….」가 「... .」로 떨어져 보임).
 사용: python tools/check_ko.py      (문제가 있으면 목록을 출력하고 종료 코드 1)
 """
@@ -20,6 +21,8 @@ import strfile
 RADIO, MISSION, STORY, MENU = 346, 410, 574, 557
 # 미션 설명 창(frontend 147~170번): 실기에서 276px 줄까지 보이고 282px 줄은 끝 글자가 잘림(일본어 원문 최대 270px)
 BRIEF, BRIEF_IDX = 276, (147, 170)
+# 「승리를 위한 조언」 창(glob 208~279번): 7줄, 1~5번째 줄 258px, 6·7번째 줄은 아래 UI 때문에 216px(실기 사진)
+TIP, TIP_LOW, TIP_IDX = 258, 216, (208, 279)
 _W = {}
 
 
@@ -69,6 +72,11 @@ def check():
             else:
                 lim, maxl = MISSION, None
             ws = line_widths(font, ko, font in ascii_fonts)
+            if scene.startswith('glob') and TIP_IDX[0] <= i <= TIP_IDX[1] and not speaker:
+                lim, maxl = TIP, 7
+                low = [w for w in ws[5:] if w > TIP_LOW]
+                if low:
+                    problems.append((where, f'6·7번째 줄 폭 {max(low)}px > {TIP_LOW}px', ko))
             if max(ws) > lim:
                 problems.append((where, f'줄 폭 {max(ws)}px > {lim}px', ko))
             if maxl and ko.rstrip('\n').count('\n') + 1 > maxl:
