@@ -3,12 +3,12 @@
 *Totsugeki!! Famicom Wars* (게임큐브, 일본판 `G8WJ01`) 비공식 한국어 팬 패치입니다.
 대사는 일본어판 원문을 기준으로 번역했습니다.
 
-**제작: arqhive** · **최신 버전: [v0.3.2](../../releases/tag/v0.3.2)**
+**제작: arqhive** · **최신 버전: [v1.0f](../../releases/tag/v1.0f)** (완성판)
 
 - 대사 전체를 한글화했습니다(미션 24개의 무전 대사·목표, 스토리 무비 자막 13편).
 - 메뉴 전체를 한글화했습니다(메인 메뉴, 설정, 유닛 설명, 메모리카드 메시지).
 - 타이틀 로고, 시작할 때 나오는 경고 화면, 디스크 배너 그림을 한글화했습니다.
-- 오프닝 로고 무비를 한글 로고로 새로 만들었습니다. 원본과 같은 연출로 「돌격!!」·「패미컴」·「워즈★」가 차례로 날아들어 번쩍입니다.
+- 오프닝 로고 무비를 한글 로고로 새로 만들었습니다. 원본과 같은 연출로 「돌격!!」·「패미컴」·「워즈★」가 차례로 날아들어 번쩍입니다. 엔딩 컷씬 끝에 나오는 로고도 한글 로고로 바꿨습니다.
 - 장면마다 쓰인 한글만 모아 게임 폰트를 새로 만들었습니다. 원본과 같은 흰 글씨·검은 테두리·그림자 모양입니다.
 - **원본과 같은 1.4GB 디스크 크기를 유지합니다.**
 
@@ -24,7 +24,7 @@
 
 ### 적용 방법
 
-1. [배포 페이지](../../releases/latest)에서 `G8WJ_KPatch_v0.3.2.zip`을 받아 풉니다.
+1. [배포 페이지](../../releases/latest)에서 `G8WJ_KPatch_v1.0f.zip`을 받아 풉니다.
 2. 풀린 폴더에 원본 이미지를 넣고 `패치하기.bat`을 더블클릭합니다. 원본을 `패치하기.bat` 위에 끌어다 놓아도 됩니다.
 3. 같은 폴더에 `Totsugeki!! Famicom Wars (Korean).iso`가 생깁니다. 원본 파일은 그대로 남습니다.
 
@@ -37,7 +37,7 @@
 | CISO, WIA, WDF, GCZ | ISO (동봉한 wit으로 변환 후 적용) |
 | RVZ, NKit | 지원 안 함 (ISO로 바꾼 뒤 적용) |
 
-Redump 정본 ISO(`Totsugeki!! Famicom Wars (Japan).iso`, 1,459,978,240 바이트, MD5 `edd9c78deed24f0807c3ed380a8f61d8`)에 적용하면 결과 MD5는 `0f50fe8ac2069f5cf75bf03202a0ebdc`이고, 패처가 끝에 「정본(Redump) 원본 기준 결과와 일치합니다」를 출력합니다.
+Redump 정본 ISO(`Totsugeki!! Famicom Wars (Japan).iso`, 1,459,978,240 바이트, MD5 `edd9c78deed24f0807c3ed380a8f61d8`)에 적용하면 결과 MD5는 `4f51d7853ba756900ef41149f6394a1e`이고, 패처가 끝에 「정본(Redump) 원본 기준 결과와 일치합니다」를 출력합니다.
 
 ### 실행 환경
 
@@ -46,7 +46,7 @@ Redump 정본 ISO(`Totsugeki!! Famicom Wars (Japan).iso`, 1,459,978,240 바이�
 ### 알려진 문제
 
 - 승리·패배 연출 글자(VICTORY, DEFEAT)와 배경 속 간판(FORT GRIDIRON, STOP)은 일본판 원본부터 영문 디자인이라 그대로 두었습니다.
-- 스토리 무비와 데모 영상 안에 그려진 글자는 영상의 일부라 바꾸지 않았습니다. 무비 자막은 모두 한글로 나옵니다. 오프닝 로고 무비만 새로 만들었습니다.
+- 스토리 무비와 데모 영상 안에 그려진 글자는 영상의 일부라 바꾸지 않았습니다. 무비 자막은 모두 한글로 나옵니다. 오프닝 로고 무비와 엔딩 컷씬 끝 로고만 새로 만들었습니다.
 - 게임 안 텍스처 1,187종과 디스크 배너·세이브 아이콘을 모두 확인했습니다. 일본어가 들어간 그림은 타이틀 로고, 경고 화면 두 장, 디스크 배너 그림까지 4장이며 모두 한글화했습니다.
 - 게임 목록에 나오는 디스크 배너의 제목·설명 문구와 메모리카드의 세이브 이름은 Shift-JIS 전용 칸이라 한글을 넣을 수 없어 일본어로 남습니다.
 
@@ -67,8 +67,8 @@ Redump 정본 ISO(`Totsugeki!! Famicom Wars (Japan).iso`, 1,459,978,240 바이�
 # 한글 ISO 만들기 (work/TotsugekiFamicomWars_KO.iso)
 python tools/build.py
 
-# 배포용 패처: 빌드 ISO와 원본에서 바뀐 파일 차분을 만들어 release/G8WJ_KPatch_v0.3.2.zip 으로 묶음
-python tools/make_patcher.py --orig "Totsugeki!! Famicom Wars (Japan).iso" --build work/TotsugekiFamicomWars_KO.iso     --out release/G8WJ_KPatch_v0.3.2 --version 0.3.2 --bin work/bin --readme release/README_한국어.txt
+# 배포용 패처: 빌드 ISO와 원본에서 바뀐 파일 차분을 만들어 release/G8WJ_KPatch_v1.0f.zip 으로 묶음
+python tools/make_patcher.py --orig "Totsugeki!! Famicom Wars (Japan).iso" --build work/TotsugekiFamicomWars_KO.iso     --out release/G8WJ_KPatch_v1.0f --version 1.0f --bin work/bin --readme release/README_한국어.txt
 ```
 
 처음 실행하면 일본판 ISO를 `work/jp`에 추출합니다. 번역을 검사한 뒤 문자열 40개, 장면 폰트 39벌, 그림 4장(디스크 배너 포함), 오프닝 로고 무비를 만들어 바뀐 파일 122개로 ISO를 다시 구성하고, 파일 3,576개를 모두 원본·빌드 결과와 비교해 검증합니다.
